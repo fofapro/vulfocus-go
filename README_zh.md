@@ -2,32 +2,34 @@
 
 [![GitHub (pre-)release](https://img.shields.io/github/release/fofapro/vulfocus-go/all.svg)](https://github.com/fofapro/vulfocus-go/releases) [![stars](https://img.shields.io/github/stars/fofapro/vulfocus-go.svg)](https://github.com/fofapro/vulfocus-go/stargazers) [![license](https://img.shields.io/github/license/fofapro/vulfocus-go.svg)](https://github.com/fofapro/vulfocus-go/blob/master/LICENSE)
 
-[中文文档](https://github.com/fofapro/vulfocus-go/blob/master/README_zh.md)
+[English document](https://github.com/fofapro/vulfocus-go/blob/master/README.md)
 
 ## Vulfocus API
 
-[`Vulfocus API`](https://fofapro.github.io/vulfocus/#/VULFOCUSAPI) is the `RESUFul API` interface provided by [`Vulfocus`](http://vulfocus.io/) for development, allowing Developers integrate [`Vulfocus`](http://vulfocus.io) in their own projects.
+[`Vulfocus API`](https://fofapro.github.io/vulfocus/#/VULFOCUSAPI) 是  [`Vulfocus`](http://vulfocus.io/) 为开发提供的 `RESUFul API`接口，允许开发者在自己的项目中集成 [`Vulfocus`](http://vulfocus.io)。
 
 ## Vulfocus SDK
 
-The `GO` version of `SDK` written based on the [`Vulfocus API`](https://fofapro.github.io/vulfocus/#/VULFOCUSAPI) makes it easy for `Golang` developers to quickly integrate [`Vulfocus`](http://vulfocus.io/)  into their projects.
+基于 [`Vulfocus API`](https://fofapro.github.io/vulfocus/#/VULFOCUSAPI) 编写的 `GO` 版 `SDK`，方便`Golang`开发者快速将  [`Vulfocus`](http://vulfocus.io/) 集成到自己的项目中。
 
 
-## Add dependency
+## 添加依赖
 
 ```bash
 go get github.com/fofapro/vulfocus-go
 ```
 
-## Use
+## 使用
 
-|field|description|
+|字段名称|描述|
 |::|::|
-|`addr`|[`Vulfocus`](http://vulfocus.io/) URL|
-|`username`|User login [`Vulfocus`](http://vulfocus.io/) userbox `username`|
-|`licence`|Please go to the [`personal center`](http://vulfocus.fofa.so/#/profile/index) to view `API licence`|
+|`addr`|[`Vulfocus`](http://vulfocus.io/) 地址|
+|`username`|用户登陆 [`Vulfocus`](http://vulfocus.io/) 使用的用户名|
+|`licence`|前往 [`个人中心`](http://vulfocus.fofa.so/#/profile/index) 查看 `API Key`|
 
-### Pull Images
+使用 `接口地址` 、`用户账号` 、`licence` 创建一个客户端，即可调用相关函数。
+
+### 获取镜像
 
 ```go
 package main
@@ -45,6 +47,7 @@ const (
 
 func main() {
 	client := vulfocus.NewClient(addr, username, licence)
+	// 获取镜像
 	err, images := client.GetImages()
 	if err != nil {
 		return
@@ -56,7 +59,7 @@ func main() {
 }
 ```
 
-### Start
+### 创建环境
 
 ```go
 package main
@@ -74,6 +77,7 @@ const (
 
 func main() {
 	client := vulfocus.NewClient(addr, username, licence)
+  // 获取镜像
 	err, images := client.GetImages()
 	if err != nil {
 		return
@@ -82,6 +86,7 @@ func main() {
 	if len(images) == 0 {
 		return
 	}
+	// 创建
 	err, exposed := client.Start(images[0].Name)
 	if err != nil {
 		return
@@ -90,7 +95,7 @@ func main() {
 }
 ```
 
-### Stop
+### 停止环境
 
 ```go
 package main
@@ -108,6 +113,7 @@ const (
 
 func main() {
 	client := vulfocus.NewClient(addr, username, licence)
+  // 获取镜像
 	err, images := client.GetImages()
 	if err != nil {
 		return
@@ -116,6 +122,7 @@ func main() {
 	if len(images) == 0 {
 		return
 	}
+	// 停止
 	err = client.Stop(images[0].Name)
 	if err != nil {
 		return
@@ -123,7 +130,7 @@ func main() {
 }
 ```
 
-### Delete
+### 删除环境
 
 ```go
 package main
@@ -141,6 +148,7 @@ const (
 
 func main() {
 	client := vulfocus.NewClient(addr, username, licence)
+	// 获取镜像
 	err, images := client.GetImages()
 	if err != nil {
 		return
@@ -149,6 +157,7 @@ func main() {
 	if len(images) == 0 {
 		return
 	}
+	// 删除
 	err = client.Delete(images[0].Name)
 	if err != nil {
 		return
@@ -156,10 +165,10 @@ func main() {
 }
 ```
 
-## Update Log
+## 更新日志
 
 2021-11-25
 
 ```
-- Version release
+- 版本发布
 ```
