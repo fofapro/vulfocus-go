@@ -22,7 +22,7 @@ go get github.com/fofapro/vulfocus-go
 ## 使用
 
 |字段名称|描述|
-|::|::|
+| ---- | ---- |
 |`addr`|[`Vulfocus`](http://vulfocus.io/) 地址|
 |`username`|用户登陆 [`Vulfocus`](http://vulfocus.io/) 使用的用户名|
 |`licence`|前往 [`个人中心`](http://vulfocus.fofa.so/#/profile/index) 查看 `API Key`|

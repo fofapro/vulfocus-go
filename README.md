@@ -20,9 +20,8 @@ go get github.com/fofapro/vulfocus-go
 ```
 
 ## Use
-
 |field|description|
-|::|::|
+| ---- | ---- |
 |`addr`|[`Vulfocus`](http://vulfocus.io/) URL|
 |`username`|User login [`Vulfocus`](http://vulfocus.io/) userbox `username`|
 |`licence`|Please go to the [`personal center`](http://vulfocus.fofa.so/#/profile/index) to view `API licence`|
